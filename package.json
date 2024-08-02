@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "@nuxt/ui": "^2.18.2",
+    "@prisma/client": "^5.17.0",
     "echarts": "^5.5.1",
     "nuxt": "^3.12.4",
+    "uuid": "^10.0.0",
     "vue": "latest"
   },
   "devDependencies": {
     "@antfu/ni": "^0.22.0",
+    "@iconify-json/heroicons": "^1.1.23",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.40",
     "prisma": "^5.17.0",
