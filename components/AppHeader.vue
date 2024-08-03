@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const colorMode = useColorMode()
 const isDark = computed({
   get() {
@@ -6,13 +7,10 @@ const isDark = computed({
   },
   set() {
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-    //@ts-ignore
     links[2][0].icon = isDark.value ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'
   }
 })
-
 const toggle = useToggle(isDark)
-
 const links = reactive([[], [{
   icon: 'i-heroicons:presentation-chart-line',
   label: 'Record',
@@ -23,8 +21,13 @@ const links = reactive([[], [{
   click: toggle
 }]])
 
+
+
 </script>
 <template>
-  <UHorizontalNavigation :links class="border-b border-slate-700"></UHorizontalNavigation>
+  <div class="min-w-screen">
+    <UHorizontalNavigation :links class="border-b border-slate-700"></UHorizontalNavigation>
+    <CommandAction />
+  </div>
 </template>
 <style scoped></style>

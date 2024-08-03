@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { BodyRecord } from '@prisma/client'
 import * as echarts from 'echarts'
-const chart = ref<HTMLDivElement | null>(null)
+const chartRef = ref<HTMLDivElement | null>(null)
+const chartInstance = ref<echarts.ECharts | null>(null)
 const bodyRecords = ref<BodyRecord[]>([])
 const colorMode = useColorMode()
 onMounted(async () => {
@@ -64,8 +65,9 @@ watch(option, () => {
 })
 
 function initChart() {
-  const myChart = echarts.init(chart.value)
-  myChart.setOption(option.value)
+  if (!chartInstance.value)
+    chartInstance.value = echarts.init(chartRef.value)
+  chartInstance.value.setOption(option.value)
 }
 
 
@@ -75,8 +77,10 @@ async function fetchData() {
 
 </script>
 <template>
-  <UCard class="m-5">
-    <div ref="chart" class="m-2 h-96"></div>
-  </UCard>
+  <div class="p-5">
+    <UCard>
+      <div ref="chartRef" class="h-[calc(100vh-9rem)]"></div>
+    </UCard>
+  </div>
 </template>
 <style scoped></style>

@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxt/ui": "^2.18.2",
     "@prisma/client": "^5.17.0",
+    "@vueuse/core": "^10.11.0",
     "echarts": "^5.5.1",
     "nuxt": "^3.12.4",
     "uuid": "^10.0.0",
