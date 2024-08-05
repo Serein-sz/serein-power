@@ -12,6 +12,10 @@ const isDark = computed({
 })
 const toggle = useToggle(isDark)
 const links = reactive([[], [{
+  label: 'Profile',
+  icon: 'i-mdi:face-man-profile',
+  to: '/'
+}, {
   icon: 'i-heroicons:presentation-chart-line',
   label: 'Record',
   to: '/record'
