@@ -22,7 +22,8 @@
   "devDependencies": {
     "@antfu/ni": "^0.22.0",
     "@iconify-json/heroicons": "^1.1.23",
-    "@iconify-json/mdi": "^1.1.68",
+    "@iconify-json/simple-icons": "^1.1.112",
+    "@iconify-json/skill-icons": "^1.1.10",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.40",
     "prisma": "^5.17.0",

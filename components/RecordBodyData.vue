@@ -18,7 +18,6 @@ onMounted(async () => {
 })
 
 const refreshMark = useRefresh(recordRefreshKey)
-
 async function submit() {
   await $fetch<BodyRecord>('/api/record', { method: 'post', body: bodyData })
   refreshMark.value ^= 1

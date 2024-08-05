@@ -36,9 +36,12 @@ importers:
       '@iconify-json/heroicons':
         specifier: ^1.1.23
         version: 1.1.23
-      '@iconify-json/mdi':
-        specifier: ^1.1.68
-        version: 1.1.68
+      '@iconify-json/simple-icons':
+        specifier: ^1.1.112
+        version: 1.1.112
+      '@iconify-json/skill-icons':
+        specifier: ^1.1.10
+        version: 1.1.10
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.40)
@@ -679,8 +682,11 @@ packages:
   '@iconify-json/heroicons@1.1.23':
     resolution: {integrity: sha512-LLev2ZBBDJKMzjnQgZRhEj0Nkz5m9O4UtQVH2TpPchdXSkxQUUOlPpsM4MVQCs49a2MaJfKiay+48WaZli5cNQ==}
 
-  '@iconify-json/mdi@1.1.68':
-    resolution: {integrity: sha512-7//TKCiXLU6kNWeOJRTBbisofVO7rF1sD1TZTL4/V9nqlmVNczQ5IOY0GgKOTsitkcTnX9GXgrgbjw3OI5B69w==}
+  '@iconify-json/simple-icons@1.1.112':
+    resolution: {integrity: sha512-ERcVnYpwy5V2ktnOzgcSaN92tCMtB4LqPTDaf4kHlYRFdCBxzs1D1CakcnoAeivktTHtKsnyVdyhLKlUc0D/cw==}
+
+  '@iconify-json/skill-icons@1.1.10':
+    resolution: {integrity: sha512-zAs3zb3wwH3uExbFadBdxidx7keXO5Wuk4tqsCJuo/3qWjJlqabxzfzcCE+L6bkItORzN1QxmHUC9MU42xGAcQ==}
 
   '@iconify/collections@1.0.444':
     resolution: {integrity: sha512-3+dA5B8vs+qew23dwBAqv6M4LqtOHlYQiKCproN5o3lLelnA1fnWJMfv5f2RyPecaS9rZEGi1+eg8AFKF2sk1A==}
@@ -4238,7 +4244,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/mdi@1.1.68':
+  '@iconify-json/simple-icons@1.1.112':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/skill-icons@1.1.10':
     dependencies:
       '@iconify/types': 2.0.0
 

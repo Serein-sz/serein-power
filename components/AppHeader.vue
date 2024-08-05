@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const colorMode = useColorMode()
 const isDark = computed({
   get() {
@@ -7,25 +6,21 @@ const isDark = computed({
   },
   set() {
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-    links[2][0].icon = isDark.value ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'
+    links[1][links[1].length - 1].icon = isDark.value ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'
   }
 })
 const toggle = useToggle(isDark)
-const links = reactive([[], [{
-  label: 'Profile',
-  icon: 'i-mdi:face-man-profile',
+const links = reactive([[{
+  icon: 'i-heroicons:home',
   to: '/'
-}, {
-  icon: 'i-heroicons:presentation-chart-line',
+}], [{
   label: 'Record',
   to: '/record'
-}], [{
+}, {
   icon: 'i-heroicons-sun-20-solid',
   iconClass: 'dark:bg-gray-100 bg-gray-800',
   click: toggle
 }]])
-
-
 
 </script>
 <template>

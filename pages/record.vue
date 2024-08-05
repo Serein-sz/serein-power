@@ -3,12 +3,9 @@ import type { BodyRecord } from '@prisma/client'
 import * as echarts from 'echarts'
 const chartRef = ref<HTMLDivElement | null>(null)
 const chartInstance = ref<echarts.ECharts | null>(null)
-const bodyRecords = ref<BodyRecord[]>([])
 const colorMode = useColorMode()
-onMounted(async () => {
-  await fetchData()
-  initChart()
-})
+
+const { data, refresh } = await useFetch<BodyRecord[]>('/api/record', { method: 'get' })
 
 const option = computed(() => ({
   darkMode: colorMode.value === 'dark',
@@ -19,7 +16,7 @@ const option = computed(() => ({
   xAxis: {
     type: 'category',
     boundaryGap: false,
-    data: bodyRecords.value.map(item => new Date(item.created_at).toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-'))
+    data: data.value!.map(item => new Date(item.created_at).toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-'))
   },
   yAxis: {
     type: 'value',
@@ -32,7 +29,7 @@ const option = computed(() => ({
   },
   series: [
     {
-      data: bodyRecords.value.map(item => item.weight),
+      data: data.value!.map(item => item.weight),
       type: 'line',
       areaStyle: {},
       smooth: true,
@@ -44,7 +41,7 @@ const option = computed(() => ({
       },
       markLine: {
         data: [{
-          yAxis: bodyRecords.value.slice(Math.max(bodyRecords.value.length - 7, 0)).reduce((a, b) => a + b.weight, 0) / Math.min(bodyRecords.value.length, 7),
+          yAxis: data.value!.slice(Math.max(data.value!.length - 7, 0)).reduce((a, b) => a + b.weight, 0) / Math.min(data.value!.length, 7),
           label: {
             formatter: '平均体重: {c}kg',
             position: 'end'
@@ -61,6 +58,10 @@ const option = computed(() => ({
   ]
 }))
 
+onMounted(() => {
+  initChart()
+})
+
 watch(option, () => {
   initChart()
 })
@@ -72,13 +73,10 @@ function initChart() {
 }
 
 const refreshMark = useRefresh(recordRefreshKey)
-watch(refreshMark, () => {
-  fetchData()
-})
 
-async function fetchData() {
-  bodyRecords.value = await $fetch<BodyRecord[]>('/api/record', { method: 'get' })
-}
+watch(refreshMark, () => {
+  refresh()
+})
 
 </script>
 <template>
