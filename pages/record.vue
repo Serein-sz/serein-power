@@ -19,11 +19,7 @@ const option = computed(() => ({
   xAxis: {
     type: 'category',
     boundaryGap: false,
-    data: bodyRecords.value.map(item => new Date(item.created_at).toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-')),
-    max: function (value: any) {
-      const maxDate = value.max
-      return maxDate + 1
-    },
+    data: bodyRecords.value.map(item => new Date(item.created_at).toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-'))
   },
   yAxis: {
     type: 'value',
@@ -41,17 +37,22 @@ const option = computed(() => ({
       areaStyle: {},
       smooth: true,
       color: '#00C16A',
+      label: {
+        show: true,
+        position: 'top',
+        formatter: '{c}kg'
+      },
       markLine: {
         data: [{
           yAxis: bodyRecords.value.slice(Math.max(bodyRecords.value.length - 7, 0)).reduce((a, b) => a + b.weight, 0) / Math.min(bodyRecords.value.length, 7),
           label: {
-            formatter: '平均体重: {c}',
+            formatter: '平均体重: {c}kg',
             position: 'end'
           }
         }, {
           yAxis: 64.4,
           label: {
-            formatter: '目标体重: {c}',
+            formatter: '目标体重: {c}kg',
             position: 'end'
           }
         }]
@@ -70,6 +71,10 @@ function initChart() {
   chartInstance.value.setOption(option.value)
 }
 
+const refreshMark = useRefresh(recordRefreshKey)
+watch(refreshMark, () => {
+  fetchData()
+})
 
 async function fetchData() {
   bodyRecords.value = await $fetch<BodyRecord[]>('/api/record', { method: 'get' })
