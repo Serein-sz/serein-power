@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { _backgroundPosition, _backgroundSize } from '#tailwind-config/theme';
-
 interface skBadge {
   darkIcon: string
   lightIcon: string
   content: string
 }
+
 const skillArray = ref<{ title: string, skills: skBadge[] }[]>([
   {
     title: 'Language', skills: [
@@ -42,6 +41,7 @@ const skillArray = ref<{ title: string, skills: skBadge[] }[]>([
     ]
   }
 ])
+
 </script>
 <template>
   <UContainer class="p-4">
@@ -65,8 +65,7 @@ const skillArray = ref<{ title: string, skills: skBadge[] }[]>([
             :content="item.content" />
         </div>
       </div>
-      <UDivider label="Project" :ui="{ label: 'text-xl' }" />
+      <UDivider label="Expression" :ui="{ label: 'text-xl' }" />
     </UCard>
   </UContainer>
 </template>
-<!-- <style scoped></style> -->

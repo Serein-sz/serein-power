@@ -11,6 +11,7 @@
     "migrate": "pnpm dlx prisma migrate dev --name"
   },
   "dependencies": {
+    "@nuxt/eslint": "^0.5.0",
     "@nuxt/ui": "^2.18.2",
     "@prisma/client": "^5.17.0",
     "@vueuse/core": "^10.11.0",

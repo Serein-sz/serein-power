@@ -9,5 +9,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/ui"],
+  modules: ["@nuxt/ui", "@nuxt/eslint"],
 })

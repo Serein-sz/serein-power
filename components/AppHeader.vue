@@ -10,17 +10,31 @@ const isDark = computed({
   }
 })
 const toggle = useToggle(isDark)
-const links = reactive([[{
-  icon: 'i-heroicons:home',
-  to: '/'
-}], [{
-  label: 'Record',
-  to: '/record'
-}, {
-  icon: 'i-heroicons-sun-20-solid',
-  iconClass: 'dark:bg-gray-100 bg-gray-800',
-  click: toggle
-}]])
+const links = reactive([
+  [
+    {
+      icon: 'i-heroicons:home',
+      to: '/'
+    },
+  ], [
+    {
+      label: 'Record',
+      to: '/record'
+    },
+    {
+      icon: 'i-simple-icons:github',
+      iconClass: 'dark:bg-gray-100 bg-gray-800',
+      click: () => window.open('https://github.com/Serein-sz'),
+    },
+    {
+      icon: 'i-heroicons-sun-20-solid',
+      iconClass: 'dark:bg-gray-100 bg-gray-800',
+      click: toggle
+    }
+  ]
+])
+
+
 
 </script>
 <template>
