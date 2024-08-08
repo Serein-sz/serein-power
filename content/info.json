@@ -1,0 +1,116 @@
+{
+  "name": "Wang Qiang",
+  "description": "A full stack engineer",
+  "skills": [
+    {
+      "name": "Language",
+      "content": [
+        {
+          "darkIcon": "i-skill-icons:java-dark",
+          "lightIcon": "i-skill-icons:java-light",
+          "name": "Java"
+        },
+        {
+          "darkIcon": "i-skill-icons:typescript",
+          "lightIcon": "i-skill-icons:typescript",
+          "name": "TypeScript"
+        },
+        {
+          "darkIcon": "i-skill-icons:python-dark",
+          "lightIcon": "i-skill-icons:python-light",
+          "name": "Python"
+        },
+        {
+          "darkIcon": "i-skill-icons:golang",
+          "lightIcon": "i-skill-icons:golang",
+          "name": "Go"
+        },
+        {
+          "darkIcon": "i-skill-icons:rust",
+          "lightIcon": "i-skill-icons:rust",
+          "name": "Rust"
+        }
+      ]
+    },
+    {
+      "name": "Framework",
+      "content": [
+        {
+          "darkIcon": "i-skill-icons:spring-dark",
+          "lightIcon": "i-skill-icons:spring-light",
+          "name": "Spring Family Bucket"
+        },
+        {
+          "darkIcon": "i-skill-icons:vuejs-dark",
+          "lightIcon": "i-skill-icons:vuejs-light",
+          "name": "Vue"
+        },
+        {
+          "darkIcon": "i-skill-icons:nuxtjs-dark",
+          "lightIcon": "i-skill-icons:nuxtjs-light",
+          "name": "Nuxt"
+        },
+        {
+          "darkIcon": "i-skill-icons:react-dark",
+          "lightIcon": "i-skill-icons:react-light",
+          "name": " React"
+        },
+        {
+          "darkIcon": "i-skill-icons:nextjs-dark",
+          "lightIcon": "i-skill-icons:nextjs-light",
+          "name": " Next"
+        }
+      ]
+    },
+    {
+      "name": "Middleware",
+      "content": [
+        {
+          "darkIcon": "i-skill-icons:redis-dark",
+          "lightIcon": "i-skill-icons:redis-light",
+          "name": "Redis"
+        },
+        {
+          "darkIcon": "i-skill-icons:rabbitmq-dark",
+          "lightIcon": "i-skill-icons:rabbitmq-light",
+          "name": "Rabbitmq"
+        },
+        {
+          "darkIcon": "i-skill-icons:elasticsearch-dark",
+          "lightIcon": "i-skill-icons:elasticsearch-light",
+          "name": "Elasticsearch"
+        },
+        {
+          "darkIcon": "i-simple-icons:minio",
+          "lightIcon": "i-simple-icons:minio",
+          "name": "Minio"
+        },
+        {
+          "darkIcon": "i-skill-icons:docker",
+          "lightIcon": "i-skill-icons:docker",
+          "name": "Docker"
+        },
+        {
+          "darkIcon": "i-skill-icons:kubernetes",
+          "lightIcon": "i-skill-icons:kubernetes",
+          "name": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "content": [
+        {
+          "darkIcon": "i-skill-icons:linux-dark",
+          "lightIcon": "i-skill-icons:linux-light",
+          "name": "Linux"
+        },
+        {
+          "darkIcon": "i-skill-icons:mysql-dark",
+          "lightIcon": "i-skill-icons:mysql-light",
+          "name": "MySQL"
+        }
+      ]
+    }
+  ]
+}
