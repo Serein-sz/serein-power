@@ -112,5 +112,14 @@
         }
       ]
     }
+  ],
+  "experiences": [
+    {
+      "compony": "Shen yang quark smart",
+      "startTime": "2023/07/06",
+      "endTime": "2023/07/06",
+      "position": "Full stack engineer",
+      "projects": []
+    }
   ]
 }

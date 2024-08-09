@@ -25,6 +25,19 @@ const info = await queryContent<Info>('/info').findOne()
         </div>
       </div>
       <UDivider label="Expression" :ui="{ label: 'text-xl' }" />
+      <div v-for="(experience, key) in info.experiences" :key class="mt-5">
+        <UAlert :ui="{ title: 'text-xl' }">
+          <template #title>
+            <span>{{ experience.compony }}</span>
+          </template>
+          <template #description>
+            <div class="flex gap-2 mt-2">
+              <span>{{ experience.position }}</span>
+              <span>{{ `${experience.startTime} - ${experience.endTime}` }}</span>
+            </div>
+          </template>
+        </UAlert>
+      </div>
     </UCard>
   </UContainer>
 </template>
